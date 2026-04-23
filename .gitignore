@@ -31,6 +31,7 @@ cmake_build/
 .idea/
 cmake-build-debug/
 cmake-build-linux/
+SpeedTest
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
