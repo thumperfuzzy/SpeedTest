@@ -17,18 +17,18 @@ void banner(){
 void usage(const char* name){
     std::cerr << "Usage: " << name << " ";
     std::cerr << " [--latency] [--quality] [--download] [--upload] [--share] [--help]\n"
-            "      [--test-server host:port] [--output verbose|text|json]\n";
+            "      [--test-server host:port] [--output verbose|text|json|csv|csv_header]\n";
     std::cerr << "optional arguments:" << std::endl;
-    std::cerr << "  --help                      Show this message and exit\n";
-    std::cerr << "  --latency                   Perform latency test only\n";
-    std::cerr << "  --quality                   Perform quality test only. It includes latency test\n";
-    std::cerr << "  --download                  Perform download test only. It includes latency test\n";
-    std::cerr << "  --upload                    Perform upload test only. It includes latency test\n";
-    std::cerr << "  --share                     Generate and provide a URL to the speedtest.net share results image\n";
-    std::cerr << "  --insecure                  Skip SSL certificate verify (Useful for Embedded devices)\n";
-    std::cerr << "  --test-server host:port     Run speed test against a specific server\n";
-    std::cerr << "  --quality-server host:port  Run line quality test against a specific server\n";
-    std::cerr << "  --output verbose|text|json  Set output type. Default: verbose\n";
+    std::cerr << "  --help                                     Show this message and exit\n";
+    std::cerr << "  --latency                                  Perform latency test only\n";
+    std::cerr << "  --quality                                  Perform quality test only. It includes latency test\n";
+    std::cerr << "  --download                                 Perform download test only. It includes latency test\n";
+    std::cerr << "  --upload                                   Perform upload test only. It includes latency test\n";
+    std::cerr << "  --share                                    Generate and provide a URL to the speedtest.net share results image\n";
+    std::cerr << "  --insecure                                 Skip SSL certificate verify (Useful for Embedded devices)\n";
+    std::cerr << "  --test-server host:port                    Run speed test against a specific server\n";
+    std::cerr << "  --quality-server host:port                 Run line quality test against a specific server\n";
+    std::cerr << "  --output verbose|text|json|csv|csv_header  Set output type. Default: verbose\n";
 }
 
 int main(const int argc, const char **argv) {
