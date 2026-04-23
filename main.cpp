@@ -95,10 +95,10 @@ int main(const int argc, const char **argv) {
         std::cout << "\"isp\":\"" << info.isp << "\"";
         std::cout << "},";
     } else if (programOptions.output_type == OutputType::csv) {
-				std::cout << info.ip_address << ","
-				 << info.lat << "," 
-				 << info.lon << "," 
-				 << info.isp << ",";
+				std::cout << '"' << info.ip_address << '"' << ","
+				<< '"' << info.lat << '"' << "," 
+				<< '"' << info.lon << '"' << "," 
+				<< '"' << info.isp << '"' << ",";
 		}
 
     auto serverList = sp.serverList();
@@ -146,11 +146,11 @@ int main(const int argc, const char **argv) {
             std::cout << "\"host\":\"" << serverInfo.host << "\"";
             std::cout << "},";
         } else if (programOptions.output_type == OutputType::csv){
-						std::cout << serverInfo.name << "," \
-						<< serverInfo.sponsor << "," \
-						<< serverInfo.distance << "," \
-						<< serverInfo.host << ","\
-						<< sp.latency() << ",";
+						std::cout << '"' << serverInfo.name << '"' << "," \
+						<< '"' << serverInfo.sponsor << '"' << "," \
+						<< '"' << serverInfo.distance << '"' << "," \
+						<< '"' << serverInfo.host << '"' << ","\
+						<< '"' << sp.latency() << '"' << ",";
 
 				}
 
@@ -199,7 +199,7 @@ int main(const int argc, const char **argv) {
             std::cout << std::fixed;
             std::cout << jitter << "\",";
         } else if (programOptions.output_type == OutputType::csv){
-						std::cout << jitter << ",";
+						std::cout << '"' << jitter << '"' << ",";
 				}
     } else {
         std::cerr << "Jitter measurement is unavailable at this time." << std::endl;
@@ -264,7 +264,7 @@ int main(const int argc, const char **argv) {
                 std::cout << (downloadSpeed*1000*1000) << "\",";
             } else if (programOptions.output_type == OutputType::csv){
 								std::cout << std::fixed;
-								std::cout << (downloadSpeed * 1000 * 1000) << ",";
+								std::cout << '"' << (downloadSpeed * 1000 * 1000) << '"' << ",";
 						}
         } else {
             std::cerr << "Download test failed." << std::endl;
@@ -305,7 +305,7 @@ int main(const int argc, const char **argv) {
             std::cout << (uploadSpeed*1000*1000) << "\",";
         } else if (programOptions.output_type == OutputType::csv) {
 						std::cout << std::fixed;
-						std::cout << (uploadSpeed * 1000 * 1000) << std::endl;
+						std::cout << '"' << (uploadSpeed * 1000 * 1000) << '"' << std::endl;
 				}
 
     } else {
