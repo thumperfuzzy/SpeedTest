@@ -6,7 +6,7 @@
 #define SPEEDTEST_CMDOPTIONS_H
 #include <getopt.h>
 
-enum OutputType { verbose, text, json };
+enum OutputType { verbose, text, json, csv, csv_header };
 
 
 typedef struct program_options_t {
@@ -67,6 +67,10 @@ bool ParseOptions(const int argc, const char **argv, ProgramOptions& options){
                     options.output_type = OutputType::text;
                 else if (strcmp(optarg, "json") == 0)
                     options.output_type = OutputType::json;
+								else if (strcmp(optarg, "csv") == 0)
+										options.output_type = OutputType::csv;
+								else if (strcmp(optarg, "csv_header") == 0)
+										options.output_type = OutputType::csv_header;
                 else {
                     std::cerr << "Unsupported output type " << optarg << std::endl;
                     std::cerr << "Supported output type: default, text, json" <<std::endl;
