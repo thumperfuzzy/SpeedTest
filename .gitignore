@@ -1,4 +1,4 @@
-# Compiled Object files
+\# Compiled Object files
 *.slo
 *.lo
 *.o
@@ -38,5 +38,5 @@ cmake-build-linux/
 # CMake stuff
 CMakeFiles/
 *.cmake
-CMake*
+CMakeCache.txt
 Makefile
