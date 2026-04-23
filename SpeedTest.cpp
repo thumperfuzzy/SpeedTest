@@ -323,8 +323,8 @@ size_t SpeedTest::writeFunc(void *buf, size_t size, size_t nmemb, void *userp) {
 }
 
 std::map<std::string, std::string> SpeedTest::parseQueryString(const std::string &query) {
-    auto map = std::map<std::string, std::string>();
-		auto pairs = splitString(query, '&');
+	  auto map = std::map<std::string, std::string>();
+    auto pairs = splitString(query, '&');
     for (auto &p : pairs){
         auto kv = splitString(p, '=');
         if (kv.size() == 2){
